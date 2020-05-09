@@ -1,4 +1,5 @@
 export default {
-    books:[],
-    book: ""
-}
+  books: [],
+  book: null,
+  book_genres: null
+};
