@@ -4,10 +4,9 @@
         <v-col cols="12" sm="6" md="3" class="justify-center " >
           <v-text-field
             dark
-            v-model="search"
             centered
             label="Search"
-            @keydown.enter="doSearch"
+           
           ></v-text-field>
         </v-col>
       </v-layout>

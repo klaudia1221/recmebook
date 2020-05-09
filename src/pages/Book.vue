@@ -1,5 +1,5 @@
 <template>
-     <v-card class="mx-5">
+     <v-card class="ma-1">
         <div class="d-flex flex-no-wrap">
           <v-avatar class="ma-5" height="700px" min-width="450px" tile>
             <v-img src="https://images.gr-assets.com/books/1458243301l/268598.jpg" object-fit: fill-height></v-img>

@@ -20,11 +20,12 @@
 
 <script>
 export default {
-  data() {
-    return {
-      book_id: 15,
-    };
-  },
+    props: ['books']
+//   data() {
+//     return {
+//       book_id: 15,
+//     };
+//   },
 };
 </script>
 
