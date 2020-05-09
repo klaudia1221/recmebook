@@ -1,5 +1,5 @@
 import Browse from "./pages/Browse.vue";
-// import Book from "./pages/Book.vue";
+import Book from "./pages/Book.vue";
 
 export default [
     {
@@ -7,10 +7,10 @@ export default [
         component: Browse,
         name: 'browse'
     },
-    // {
-    //     path: '/book/:id',
-    //     component: Book,
-    //     name: 'book',
-    //     props: true
-    // }
+    {
+        path: '/book/:id',
+        component: Book,
+        name: 'book',
+        props: true
+    }
 ]

@@ -1,4 +1,5 @@
 <template><div > 
+  <v-container>
       <v-layout row justify-center>
         <v-col cols="12" sm="6" md="3" class="justify-center " >
           <v-text-field
@@ -22,7 +23,7 @@
    
 
 
- </v-layout>
+ </v-layout></v-container>
           </div>
 </template>
 

@@ -5,7 +5,7 @@
       cover
       src="https://images.gr-assets.com/books/1432712438m/13154150.jpg"
     ></v-img>
-    <router-link :to="{ name: 'product', params: { id: 25 } }"
+    <router-link :to="{ name: 'book', params: { id: 25 } }"
       >"jsfmkjmskf"</router-link
     >
     <v-card-title>

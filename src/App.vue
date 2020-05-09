@@ -17,7 +17,7 @@
       <!-- <  div class="bg"></div> -->
         <!-- <div class="bg"> -->
 
-        <v-container>        
+        <v-container fluid>        
 
           <!-- <div class="container">   -->
           <!-- <span class="bg"> </span> -->
