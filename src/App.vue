@@ -4,7 +4,7 @@
     background: rgba(0,0,0,0);" >
       <v-app-bar app>
         <v-tabs dark fixed-tabs color="white" background-color="orange">
-          <v-tab to="/bookrecommendation">Get book recommendation</v-tab>
+          <v-tab to="/recommendation">Get book recommendation</v-tab>
           <v-tab to="/browse">Browse books</v-tab>
           <v-tab to="/signup">SignUp</v-tab>
           <v-tab to="/login">Login</v-tab>
@@ -33,6 +33,7 @@
 export default {
   name: "app",
   components: {},
+  
 };
 </script>
 <style>
@@ -48,7 +49,7 @@ width: 100%;
      background-size: cover;
     position: fixed;
     background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("~@/assets/bg.jpg") ; 
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("~@/assets/bg.jpg") ; 
   /* background-attachment: fixed; */
   /* height: 100vh; */
   /* background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("~@/assets/bg.jpg") no-repeat center center ; */
