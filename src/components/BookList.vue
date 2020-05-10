@@ -1,19 +1,14 @@
 <template
   ><div>
-    <!-- <v-layout row fill-height="auto" style="height: 300px;"> -->
-    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur tempore tenetur, sed modi assumenda neque ab dolorum nulla aperiam vitae ut quisquam nisi, tempora quo provident. Rerum consequuntur aliquid sunt!<p/> -->
-    <!-- <v-flex xs12 sm4 md2 lg3 > -->
-    <!-- <v-row fill-height="auto" style="height: 300px;"> -->
+
     <v-layout justify-center row fill-height="auto" >
       <book-card  v-for="book in books" :key="book.id" :book="book" />
-      <!-- <v-flex xs12 sm4 md2 lg3 >
-      </v-flex> -->
-      <!-- {{ this.books }} -->
       <v-pagination
-        :length="3"
+        :length=pages_count
         total-visible="6"
         color="orange"
         dark
+        class="mb-5"
       ></v-pagination>
     </v-layout>
   </div>
@@ -25,6 +20,7 @@ export default {
   data() {
     return {
       search: "",
+      perPage: 32,
     };
   },
   components: {
@@ -34,50 +30,23 @@ export default {
     books() {
       return this.$store.state.books;
     },
+     pages_count(){
+      let books_count= this.$store.state.all_books_length;
+      return Math.ceil(books_count/this.perPage);
+   
+     },
+
   },
   mounted() {
     this.$store.dispatch("getBooks");
+    this.$store.dispatch("getAllBooksLength");
+
   },
 };
-// export default {
-//   data() {
-//     return {
-//       all_books: [],
-//       dataReady: false,
-//       page: 1,
-//       perPage: 32,
-//       search: "",
-//       limit: 32,
-//       paginate: true,
-//       visiblePages: null,
-//       URL: "http://127.0.0.1:5000/books"};},
-//       methods: {
-//     doSearch() {
-//       axios.get(this.URL, { params: { search: this.search } }).then(res => {
-//         this.search = null;
-//         this.visiblePages = res.data[0];
-//         this.paginate=false;
-//       });
-//     }
-//       }
-// };
+
 </script>
 
 <style>
-.authors-style {
-  font-size: small;
-}
-.v-card--reveal {
-  align-items: center;
-  bottom: 0;
-  justify-content: center;
-  opacity: 0.8;
-  position: absolute;
-  width: 100%;
-}
-.list-item {
-  padding: 0;
-  margin: 0;
-}
+
 
 </style>

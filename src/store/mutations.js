@@ -32,3 +32,6 @@ export const SET_TOP_POPULAR_BOOKS = (state, top_popular_books) => {
     state.book_genres=null;
  
   };
+  export const SET_ALL_BOOKS_LENGTH= (state, all_books_length) => {
+    state.all_books_length =all_books_length;
+  };

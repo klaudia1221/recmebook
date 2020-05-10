@@ -28,20 +28,27 @@ export const getBookGenres = ({ commit }, bookId) => {
         commit("SET_BOOKS_TO_BE_RATED", res.data[0][0]);
       });
   };
-  export const getTopPopularBooks = ({ commit }) => {
+  export const getAllBooksLength = ({ commit }) => {
     axios
-      .get("http://127.0.0.1:5000/toppopular")
+      .get("http://127.0.0.1:5000/bookscount")
       .then((res) => {
-        commit("SET_TOP_POPULAR_BOOKS", res.data[0][0]);
+        commit("SET_ALL_BOOKS_LENGTH", res.data[0][0]);
       });
   };
-  export const getTopRatedBooks = ({ commit }) => {
-    axios
-      .get("http://127.0.0.1:5000/toprated")
-      .then((res) => {
-        commit("SET_TOP_RATED_BOOKS", res.data[0][0]);
-      });
-  };
+//   export const getTopPopularBooks = ({ commit }) => {
+//     axios
+//       .get("http://127.0.0.1:5000/toppopular")
+//       .then((res) => {
+//         commit("SET_TOP_POPULAR_BOOKS", res.data[0][0]);
+//       });
+//   };
+//   export const getTopRatedBooks = ({ commit }) => {
+//     axios
+//       .get("http://127.0.0.1:5000/toprated")
+//       .then((res) => {
+//         commit("SET_TOP_RATED_BOOKS", res.data[0][0]);
+//       });
+//   };
 //   export const getBookToBeRated  = ({ commit }, bookId) => {
 //     axios
 //       .get("http://127.0.0.1:5000/bookdetails", { params: { book_id: bookId }})
