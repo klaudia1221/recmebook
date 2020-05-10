@@ -1,10 +1,10 @@
 <template
-  ><div>
-
-    <v-layout justify-center row fill-height="auto" >
-      <book-card  v-for="book in books" :key="book.id" :book="book" />
+  ><div v-if="dataReady">
+    <v-layout justify-center row fill-height="auto">
+      <book-card v-for="book in this.books" :key="book.id" :book="book" />
       <v-pagination
-        :length=pages_count
+        v-model="page"
+        :length="pages_count"
         total-visible="6"
         color="orange"
         dark
@@ -15,38 +15,56 @@
 </template>
 
 <script>
+import axios from "axios";
 import BookCard from "./BookCard";
 export default {
   data() {
     return {
       search: "",
-      perPage: 32,
+      perPage: 36,
+      page: 1,
+      limit: 36,
+      books: [],
+      dataReady: false,
     };
   },
+
   components: {
     BookCard,
   },
   computed: {
-    books() {
-      return this.$store.state.books;
+    pages_count() {
+      let books_count = this.$store.state.all_books_length;
+      return Math.ceil(books_count / this.perPage);
     },
-     pages_count(){
-      let books_count= this.$store.state.all_books_length;
-      return Math.ceil(books_count/this.perPage);
-   
-     },
-
+  },
+  watch: {
+    page() {
+      axios
+        .get("http://127.0.0.1:5000/books", {
+          params: { page: this.page, limit: this.limit },
+        })
+        .then((res) => {
+          this.books = res.data[0][0];
+          this.$store.commit("SET_PAGE_NUMBER", this.page);
+          window.scrollTo(0, 0);
+        });
+    },
   },
   mounted() {
-    this.$store.dispatch("getBooks");
     this.$store.dispatch("getAllBooksLength");
-
+    this.page = this.$store.state.page;
+    axios
+      .get("http://127.0.0.1:5000/books", {
+        params: { page: this.$store.state.page, limit: this.limit },
+      })
+      .then((res) => {
+        this.books = res.data[0][0];
+        this.dataReady = true;
+        this.$store.commit("SET_BOOK", null);
+      });
   },
 };
-
 </script>
 
-<style>
-
-
-</style>
+<style></style>
