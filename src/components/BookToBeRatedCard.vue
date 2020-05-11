@@ -83,7 +83,7 @@ export default {
   methods: {
     addRating(book_id,value) {
 
-        this.$store.commit("ADD_RATING", [book_id,value]);
+        this.$store.commit("ADD_RATING", {book_id,value});
 
     },
     addToToRead(book_id) {

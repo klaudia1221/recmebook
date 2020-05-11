@@ -47,10 +47,12 @@ export const ADD_TO_NOT_INTERESTED = (state, book_id) => {
   }
 };
 
-export const ADD_RATING = (state, payload) => {
-    var rating= {book_id: payload[0], rating: payload[1]};
-    state.books_ratings.push(rating);
+export const ADD_RATING = (state, {book_id,value}) => {
+    // var rating= {book_id: book_id, rating: value};
+    let bookRated = state.books_ratings.find(item => {
+        return item.book_id === book_id;
+    });
+    if(!bookRated){
+    state.books_ratings.push( {book_id: book_id, rating: value});}
 };
-//   export const SET_RATING= (state, book_id, value) => {
-//     state.id=page_number;
-//   };
+
