@@ -17,6 +17,9 @@ export default {
   components: {
     BooksToBeRated,
   },
+  mounted() {
+          this.$store.commit("SET_BOOK", null);
+  }
 };
 </script>
 

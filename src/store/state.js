@@ -9,5 +9,7 @@ export default {
   user_ratings: [],
   to_read: [],
   not_interested: [],
-  books_ratings: []
+  books_ratings: [],
+  excluded_books_book_ids: []
+
 };

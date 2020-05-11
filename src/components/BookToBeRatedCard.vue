@@ -35,12 +35,12 @@
         ><v-rating
           class="text-center"
           background-color="grey lighten-1"
-        @input="addRating(book.book_id, $event)"
-
+          @input="addRating(book.book_id, $event)"
+          delete
+          hover
           @click.native.stop.prevent
           color="red"
         >
-
           <!-- v-model="temp_book_ratings[book.book_id]" -->
         </v-rating>
         <div class="text-center">
@@ -81,17 +81,19 @@ export default {
   //     };
   //   },
   methods: {
-    addRating(book_id,value) {
-
-        this.$store.commit("ADD_RATING", {book_id,value});
+    addRating(book_id, value) {
+      this.$store.commit("ADD_RATING", { book_id, value });
+             this.$store.dispatch('addNewBookToBeRated')
 
     },
     addToToRead(book_id) {
-              this.$store.commit("ADD_TO_TO_READ", book_id);
+      this.$store.commit("ADD_TO_TO_READ", book_id);
+             this.$store.dispatch('addNewBookToBeRated');
 
     },
     addToNotInterested(book_id) {
       this.$store.commit("ADD_TO_NOT_INTERESTED", book_id);
+       this.$store.dispatch('addNewBookToBeRated');
     },
   },
 };
