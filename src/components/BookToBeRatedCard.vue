@@ -75,25 +75,18 @@
 <script>
 export default {
   props: ["book"],
-  //   data() {
-  //     return {
-  //       book_id: 15,
-  //     };
-  //   },
   methods: {
     addRating(book_id, value) {
       this.$store.commit("ADD_RATING", { book_id, value });
-             this.$store.dispatch('addNewBookToBeRated')
-
+      this.$store.dispatch("addNewBookToBeRated");
     },
     addToToRead(book_id) {
       this.$store.commit("ADD_TO_TO_READ", book_id);
-             this.$store.dispatch('addNewBookToBeRated');
-
+      this.$store.dispatch("addNewBookToBeRated");
     },
     addToNotInterested(book_id) {
       this.$store.commit("ADD_TO_NOT_INTERESTED", book_id);
-       this.$store.dispatch('addNewBookToBeRated');
+      this.$store.dispatch("addNewBookToBeRated");
     },
   },
 };

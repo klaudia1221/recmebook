@@ -1,6 +1,7 @@
 // export const getBooks = (state) => {
 //   return state.books;
 // };
-// export const getBook = (state) => {
-//     return state.book;
-//   };
+export const getAuthenticationStatus = (state) => {
+    return state.authenticated;
+  };
+//  export const  getAuthenticationStatus: state => state.movies

@@ -3,7 +3,9 @@
   
     <v-layout row wrap fill-height="auto" style="height: 300px;">
 
-<top-books-list/></v-layout>
+<top-books-list/>
+
+</v-layout>
     <v-layout row wrap>
       
    

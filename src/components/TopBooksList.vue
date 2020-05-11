@@ -6,11 +6,13 @@
       <v-btn class="mr-5" dark color="red" @click="getTopPopular()">Most popular</v-btn>
       <v-btn dark color="red" @click="getTopRated()">Best rated</v-btn>
     </v-layout>
-    <div v-if="dataReady">
-      <v-layout justify-center row fill-height="auto">
+    <!-- <div v-if="dataReady"> -->
+      <v-layout justify-center row >
+            <!-- <v-flex xs12 sm4 md2 lg3> -->
+
         <book-card v-for="book in top_list" :key="book.id" :book="book" />
       </v-layout>
-    </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -21,7 +23,7 @@ export default {
   data() {
     return {
       top_books: [],
-      dataReady: false,
+    //   dataReady: false,
     };
   },
   methods: {

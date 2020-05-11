@@ -82,3 +82,6 @@ export const ADD_NEW_BOOK = (state, book) => {
   state.books_to_be_rated.push(book);
   ADD_TO_EXCLUDED(state,book.book_id);
 };
+export const MODIFY_ACCESS = (state,value) => {
+    state.authenticated=value;
+  };

@@ -39,13 +39,7 @@
 
 <script>
 export default {
-  props: ["book"],
-  //   data() {
-  //     return {
-  //       book_id: 15,
-  //     };
-  //   },
-  
+  props: ["book"]
 };
 </script>
 

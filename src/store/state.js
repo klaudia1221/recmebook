@@ -10,6 +10,7 @@ export default {
   to_read: [],
   not_interested: [],
   books_ratings: [],
-  excluded_books_book_ids: []
+  excluded_books_book_ids: [],
+  authenticated: false
 
 };
