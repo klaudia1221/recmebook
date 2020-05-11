@@ -1,6 +1,7 @@
 import Browse from "./pages/Browse.vue";
 import Book from "./pages/Book.vue";
 import Recommendation from "./pages/Recommendation.vue";
+import RecommendationResults from "./pages/RecommendationResults.vue"
 import Top from "./pages/Top.vue"
 export default [
     {
@@ -12,6 +13,11 @@ export default [
         path: '/recommendation',
         component: Recommendation,
         name: 'recommendation',
+    },
+    {
+        path: '/recommendation/results',
+        component: RecommendationResults,
+        name: 'results',
     },
     {
         path: '/top',

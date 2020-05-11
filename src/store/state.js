@@ -11,6 +11,7 @@ export default {
   not_interested: [],
   books_ratings: [],
   excluded_books_book_ids: [],
-  authenticated: false
+  authenticated: false,
+  recommended_items: []
 
 };

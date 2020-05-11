@@ -14,6 +14,17 @@
       </v-flex> -->
       <!-- {{ this.books }} -->
     </v-layout>
+    <v-container class="my-5">
+      <v-layout justify-center row fill-height="auto">
+        <v-btn
+          color="red"
+          large
+          @click="getRecommendations"
+          style="min-width: 100px, min-height:200px"
+          >Get recommendations</v-btn
+        >
+      </v-layout>
+    </v-container>
   </div>
 </template>
 
@@ -27,6 +38,12 @@ export default {
     books_to_be_rated() {
       return this.$store.state.books_to_be_rated;
     },
+  },
+  methods: {
+ getRecommendations() {
+     this.$store.dispatch("getRecommendations");
+      this.$router.replace('recommendation/results');
+ }
   },
   mounted() {
     // this.$store.dispatch("getBooksToBeRated");

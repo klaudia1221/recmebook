@@ -55,7 +55,19 @@ export const addNewBookToBeRated = ({ commit, state }) => {
       commit("ADD_NEW_BOOK", res.data[0][0][0]);
     });
 };
-
+export const getRecommendations = ({ commit, state }) => {
+  axios
+    .get("http://127.0.0.1:5000/getrecommendations", {
+      params: {
+        ratings: JSON.stringify(state.books_ratings),
+        not_interested: JSON.stringify(state.not_interested),
+        to_read: JSON.stringify(state.to_read),
+      },
+    })
+    .then((res) => {
+      commit("ADD_RECOMMENDATIONS", res.data[0][0]);
+    });
+};
 //   export const getTopPopularBooks = ({ commit }) => {
 //     axios
 //       .get("http://127.0.0.1:5000/toppopular")

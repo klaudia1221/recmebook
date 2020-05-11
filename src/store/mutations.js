@@ -85,3 +85,6 @@ export const ADD_NEW_BOOK = (state, book) => {
 export const MODIFY_ACCESS = (state,value) => {
     state.authenticated=value;
   };
+  export const ADD_RECOMMENDATIONS = (state,items) => {
+    state.recommended_items=items;
+  }; 
