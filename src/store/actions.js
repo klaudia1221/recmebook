@@ -42,6 +42,7 @@ export const getBookGenres = ({ commit }, bookId) => {
         commit("SET_ALL_BOOKS_LENGTH", res.data[0][0]);
       });
   };
+
 //   export const getTopPopularBooks = ({ commit }) => {
 //     axios
 //       .get("http://127.0.0.1:5000/toppopular")

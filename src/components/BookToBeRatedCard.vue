@@ -35,14 +35,34 @@
         ><v-rating
           class="text-center"
           background-color="grey lighten-1"
+        @input="addRating(book.book_id, $event)"
+
+          @click.native.stop.prevent
           color="red"
-        ></v-rating>
+        >
+
+          <!-- v-model="temp_book_ratings[book.book_id]" -->
+        </v-rating>
         <div class="text-center">
-          <v-btn class="mb-4 mx-2 mt-1" color="red" delete dark>
+          <v-btn
+            class="mb-4 mx-2 mt-1"
+            color="red"
+            @click="addToNotInterested(book.book_id)"
+            @click.native.stop.prevent
+            delete
+            dark
+          >
             NOT INTERESTED
             <v-icon dark right>mdi-cancel</v-icon><v-spacer></v-spacer>
           </v-btn>
-          <v-btn class="mb-4 mx-2 mt-1" color="orange" delete dark>
+          <v-btn
+            class="mb-4 mx-2 mt-1"
+            color="orange"
+            delete
+            @click="addToToRead(book.book_id)"
+            dark
+            @click.native.stop.prevent
+          >
             TO READ
             <v-icon dark right>mdi-eye-off</v-icon>
           </v-btn>
@@ -60,6 +80,20 @@ export default {
   //       book_id: 15,
   //     };
   //   },
+  methods: {
+    addRating(book_id,value) {
+
+        this.$store.commit("ADD_RATING", [book_id,value]);
+
+    },
+    addToToRead(book_id) {
+              this.$store.commit("ADD_TO_TO_READ", book_id);
+
+    },
+    addToNotInterested(book_id) {
+      this.$store.commit("ADD_TO_NOT_INTERESTED", book_id);
+    },
+  },
 };
 </script>
 

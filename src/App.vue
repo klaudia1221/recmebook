@@ -33,7 +33,9 @@
 export default {
   name: "app",
   components: {},
-  
+  created() {
+     this.$store.dispatch("getBooksToBeRated");
+  },
 };
 </script>
 <style>

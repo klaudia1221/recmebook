@@ -26,7 +26,7 @@ export default {
     },
   },
   mounted() {
-    this.$store.dispatch("getBooksToBeRated");
+    // this.$store.dispatch("getBooksToBeRated");
   },
 };
 
