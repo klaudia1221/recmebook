@@ -16,3 +16,10 @@ export const getAuthenticationStatus = (state) => {
   export const getRecommendedItems= (state) => {
     return state.recommended_items;
   };
+  export const getBooksToBeRated= (state) => {
+    return state.books_to_be_rated;
+  };
+
+  export const getExcludedBooks= (state) => {
+    return state.excluded_books_book_ids;
+  };

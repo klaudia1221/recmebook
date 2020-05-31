@@ -5,7 +5,6 @@
             </div>
 
     <v-container v-if="authenticated">
-
       <v-layout row wrap fill-height="auto" style="height: 300px;">
         <books-to-be-rated
       /></v-layout>

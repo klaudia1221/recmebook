@@ -2,8 +2,6 @@
   <v-flex xs12 sm4 md2 lg3>
     <v-hover v-slot:default="{ hover }" open-delay="100">
       <v-card :to="{ name: 'book', params: { id: book.book_id } }" class="ma-8">
-        <!-- <v-card  class="ma-3" style="display: 'block'" hover > -->
-        <!-- <div :to="{ name: 'bookdetails', params: { id: book.book_id }}"> -->
         <v-card-title class="card-title-style">{{
           book["title"]
         }}</v-card-title>
@@ -39,7 +37,7 @@
 
 <script>
 export default {
-  props: ["book"]
+  props: ["book"],
 };
 </script>
 

@@ -76,19 +76,30 @@
 export default {
   props: ["book"],
   methods: {
-    addRating(book_id, value) {
-      this.$store.commit("ADD_RATING", { book_id, value });
+    // contains(arr, key, val) {
+    // for (var i = 0; i < arr.length; i++) {
+    //     if(arr[i][key] === val) return true;
+    // }
+    // return false;
+  
+  addRating(book_id, value) {
+    this.$store.commit("ADD_RATING", { book_id, value });
+    if (this.$store.getters.getExcludedBooks.indexOf(book_id) != -1) {
       this.$store.dispatch("addNewBookToBeRated");
-    },
-    addToToRead(book_id) {
-      this.$store.commit("ADD_TO_TO_READ", book_id);
-      this.$store.dispatch("addNewBookToBeRated");
-    },
-    addToNotInterested(book_id) {
-      this.$store.commit("ADD_TO_NOT_INTERESTED", book_id);
-      this.$store.dispatch("addNewBookToBeRated");
-    },
+    }
   },
+  addToToRead(book_id) {
+    this.$store.commit("ADD_TO_TO_READ", book_id);
+    if (this.$store.getters.getExcludedBooks.indexOf(book_id) != -1) {
+      this.$store.dispatch("addNewBookToBeRated");
+    }
+  },
+  addToNotInterested(book_id) {
+    this.$store.commit("ADD_TO_NOT_INTERESTED", book_id);
+    if (this.$store.getters.getExcludedBooks.indexOf(book_id) != -1) {
+      this.$store.dispatch("addNewBookToBeRated");
+    }
+  }}
 };
 </script>
 

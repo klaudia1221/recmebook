@@ -5,9 +5,14 @@ import RecommendationResults from "./pages/RecommendationResults.vue"
 import Top from "./pages/Top.vue"
 export default [
     {
-        path: '/browse',
+        path: '/browse', 
         component: Browse,
         name: 'browse'
+    },
+    {
+        path: '/', 
+        component: Recommendation,
+        name: 'recommendation'
     },
     {
         path: '/recommendation',

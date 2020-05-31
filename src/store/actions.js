@@ -34,6 +34,7 @@ export const getBookGenres = ({ commit }, bookId) => {
 export const getBooksToBeRated = ({ commit }) => {
   axios.get("http://127.0.0.1:5000/coldbooks").then((res) => {
     commit("SET_BOOKS_TO_BE_RATED", res.data[0][0]);
+    commit("SET_EXCLUDED_BOOKS",res.data[0][0]);
   });
 };
 export const getAllBooksLength = ({ commit }) => {
